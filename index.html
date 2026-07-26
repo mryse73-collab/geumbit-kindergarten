@@ -73,17 +73,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .page {
   min-height: 100vh;
   padding-bottom: 120px;
-  background-color: var(--bg);
+  background-color: #FFFFFF;
   background-image:
-    /* 사이트 정체성 유지용 깅엄 체크 (원본 대비 변경분) */
-    linear-gradient(90deg, color-mix(in srgb, var(--check) 7%, transparent) 50%, transparent 50%),
-    linear-gradient(color-mix(in srgb, var(--check) 7%, transparent) 50%, transparent 50%),
-    /* 분홍 워시 — 어두운 칠판 배경을 밝은 파스텔로 눌러줌 */
-    linear-gradient(rgba(255, 248, 251, 0.88), rgba(255, 248, 251, 0.88)),
-    url("images/배경.png");
-  background-size: 34px 34px, 34px 34px, auto, cover;
-  background-position: center, center, center, center top;
-  background-repeat: repeat, repeat, no-repeat, no-repeat;
+    /* 흰 워시 — 잎 위에 글씨가 묻히지 않도록 톤을 낮춤 */
+    linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)),
+    url("images/초록배경.png");
+  background-size: auto, 128% auto;
+  background-position: center, center;
+  background-repeat: no-repeat, no-repeat;
   background-attachment: fixed;
 }
 .container { max-width: 1160px; margin: 0 auto; padding: 0 32px; }
@@ -291,12 +288,7 @@ section { padding: 120px 0; position: relative; }
 .schedule-intro-label { font-family: var(--font-body); font-size: 13px; color: var(--accent-3); font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 14px; display: block; }
 .schedule-intro h2 { font-size: clamp(28px, 3.2vw, 40px); margin-bottom: 20px; }
 .schedule-intro p { color: var(--ink-soft); font-size: 15px; line-height: 1.8; max-width: 340px; }
-.schedule-list {
-  display: flex; flex-direction: column; border-top: 1px solid var(--line);
-  background: color-mix(in srgb, var(--card) 78%, transparent);
-  backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px);
-  border-radius: var(--radius); padding: 0 18px;
-}
+.schedule-list { display: flex; flex-direction: column; border-top: 1px solid var(--line); }
 .schedule-item {
   display: grid; grid-template-columns: 100px 160px 1fr;
   gap: 20px; padding: 20px 8px; border-bottom: 1px solid var(--line);
