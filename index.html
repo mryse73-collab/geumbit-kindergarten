@@ -288,22 +288,17 @@ section { padding: 120px 0; position: relative; }
 }
 
 /* ============ gallery ============ */
-.gallery-grid { display: grid; grid-template-columns: repeat(6, 1fr); grid-auto-rows: 180px; gap: 14px; }
-.gallery-grid .tile { border-radius: var(--radius-lg); overflow: hidden; position: relative; transition: transform .4s var(--ease); }
+/* 사진이 모두 16:9 가로형이라 2×2 로 균등 배치 */
+.gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.gallery-grid .tile {
+  border-radius: var(--radius-lg); overflow: hidden; position: relative;
+  aspect-ratio: 16/9; transition: transform .4s var(--ease);
+}
 .gallery-grid .tile:hover { transform: scale(0.98); }
 .gallery-grid .tile img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .4s var(--ease); }
 .gallery-grid .tile:hover img { transform: scale(1.05); }
-.gallery-grid .tile.a { grid-column: span 2; grid-row: span 2; }
-.gallery-grid .tile.b { grid-column: span 2; grid-row: span 1; }
-.gallery-grid .tile.c { grid-column: span 2; grid-row: span 1; }
-.gallery-grid .tile.d { grid-column: span 2; grid-row: span 2; }
-.gallery-grid .tile.e { grid-column: span 2; grid-row: span 1; }
-.gallery-grid .tile.f { grid-column: span 2; grid-row: span 1; }
-@media (max-width: 860px) {
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 160px; }
-  .gallery-grid .tile.a, .gallery-grid .tile.b, .gallery-grid .tile.c,
-  .gallery-grid .tile.d, .gallery-grid .tile.e, .gallery-grid .tile.f
-  { grid-column: span 1; grid-row: span 1; }
+@media (max-width: 700px) {
+  .gallery-grid { grid-template-columns: 1fr; gap: 12px; }
 }
 
 /* ============ location ============ */
@@ -592,12 +587,10 @@ footer { padding: 64px 0 40px; border-top: 1px solid var(--line); margin-top: 80
       <p>자연광이 가득한 교실과 오감을 자극하는 놀이 공간. 사진으로 금빛i어린이집을 미리 만나보세요.</p>
     </div>
     <div class="gallery-grid">
-      <div class="tile a"><img src="images/갤러리1.png" alt="갤러리"></div>
-      <div class="tile b"><img src="images/갤러리2.png" alt="갤러리"></div>
-      <div class="tile c"><img src="images/갤러리3.png" alt="갤러리"></div>
-      <div class="tile d"><img src="images/갤러리4.png" alt="갤러리"></div>
-      <div class="tile e"><img src="images/갤러리5.png" alt="갤러리"></div>
-      <div class="tile f"><img src="images/갤러리6.png" alt="갤러리"></div>
+      <div class="tile"><img src="images/갤러리1.png" alt="교실 놀이 공간"></div>
+      <div class="tile"><img src="images/갤러리2.png" alt="역할놀이 영역"></div>
+      <div class="tile"><img src="images/갤러리3.png" alt="수국이 핀 정원 산책로"></div>
+      <div class="tile"><img src="images/갤러리4.png" alt="장미가 있는 어린이집 앞뜰"></div>
     </div>
     <div class="sec-insta-cta">
       <div>
